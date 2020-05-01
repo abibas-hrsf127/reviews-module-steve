@@ -11,7 +11,8 @@
     "server-dev": "nodemon ./server/index.js",
     "react-dev": "webpack -d --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./client/src/ --out-dir compiled --presets @babel/preset-react --source-maps inline --watch"
+    "build": "babel ./client/src/ --out-dir compiled --presets @babel/preset-react --source-maps inline --watch",
+    "seed": "mysql -u root < schema.sql"
   },
   "dependencies": {
     "axios": "^0.19.2",
