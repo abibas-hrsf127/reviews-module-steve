@@ -77,8 +77,20 @@ npm start
 
 Then open [http://localhost:3000/](http://localhost:3000/) to see your app.
 
-### connect database
+### Connect database
 
-schema.sql and seed it
+Server-side
+- Server index.js 
+  - Apply middleware
+  - route the requests and handle by db query
+  - respond to the client
+- routes.js 
+- controllers
+- models
+
+Client-side
+- Event handler
+- HTTP request handler
+- State change function
 
 <br>

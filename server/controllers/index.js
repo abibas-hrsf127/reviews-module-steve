@@ -3,7 +3,7 @@ var models = require('../models');
 module.exports = {
   reviews: {
     get: function (req, res) {
-      models.messages.get((err, results) => {
+      models.reviews.get(req, (err, results) => {
         if (err) {
           console.error('controller error from getting message: ', err);
           res.status(500).send(err);
@@ -13,7 +13,7 @@ module.exports = {
       });
     }, 
     post: function (req, res) {
-      models.messages.post(req, (err, results) => {
+      models.reviews.post(req, (err, results) => {
         if (err) {
           console.log('controller error from posting message: ', err);
           res.status(500).send(err);
