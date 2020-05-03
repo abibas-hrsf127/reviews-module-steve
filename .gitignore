@@ -1,7 +1,10 @@
 ## MAC files ##
+# Local development
+*.env
+*.dev
 .DS_Store
 
-## NPM ##
+## NPM build artifacts ##
 npm
 npm-debug.log
 node_modules/
@@ -30,3 +33,7 @@ bundle.js
 # My things
 bower_components
 config.js
+
+# Docker
+Dockerfile
+docker-compose.yml
