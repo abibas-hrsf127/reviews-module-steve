@@ -3,7 +3,7 @@ module.exports = {
     return (
       (err, results, fields) => {
         if (err) {
-          console.log('help query error');
+          console.log('query error');
           console.error(err);
           res.status(500).send(err);
         } else {
@@ -12,11 +12,11 @@ module.exports = {
       }
     );
   }, 
-  callbackQueryHandler: (callback) => {
+  cbQueryHandler: (callback) => {
     return (
       (err, results, fields) => {
         if (err) {
-          console.log('help query error');
+          console.log('query error');
           console.error(err);
           callback(err, results);
         } else {
