@@ -1,6 +1,6 @@
 # Reviews Module 
 
-> Reviews module for e-commerce website of Front End Capstone Project #HRSF127
+Reviews module for e-commerce website of Front End Capstone Project #HRSF127
 
 ## Related Projects
 
@@ -37,18 +37,28 @@ mysql --version && which mysql
 
 ### Installing Dependencies
 
+From within the root directory:
+
+```sh
+npm install
+```
+
+- React 16
+- Express 4
+- Babel 7
+- Webpack 4
+
 ### Install MySQL 5.7 on macOS
 This procedure explains how to install [MySQL](https://www.mysql.com) using [Homebrew](http://brew.sh) on macOS (Sierra 10.12 and up)
 
 https://gist.github.com/operatino/392614486ce4421063b9dece4dfe6c21
 
-From within the root directory:
+### Starting the Server
 
 ```sh
-npm install
 npm run seed
 npm run react-dev
 npm run server-dev
 ```
 
-This will run the project on [localhost:3000](http://localhost:3000)
+This will run the project with a seeded MySQL database on [localhost:3000](http://localhost:3000) 
