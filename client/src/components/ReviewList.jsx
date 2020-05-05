@@ -25,11 +25,12 @@ class ReviewList extends React.Component {
           <button>helpful</button>
           <button>relevant</button>
         </div>
-        <ReviewListEntry />
-        <ReviewListEntry />
+        {this.props.reviews.map((review) => 
+          <ReviewListEntry key={review.id} review={review}/>
+        )}
         <div className="nav-footer">
           <button>load more</button>
-          <button>write a review --></button>
+          <button>write a review</button>
         </div>
       </Fragment>
     );

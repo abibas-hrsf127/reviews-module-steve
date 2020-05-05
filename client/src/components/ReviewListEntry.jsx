@@ -19,7 +19,7 @@ class ReviewListEntry extends React.Component {
     return (
       <Fragment>
         <div>★★★★☆ April 30, 2020</div>
-        <div>Title: Awesome shoe!</div>
+        <div>Title: {this.props.review.title}</div>
         <div>Text: Comfortable, it has great style</div>
         <div>✓I recommend this product</div>
         <div>user: vanesa4</div>
@@ -31,3 +31,15 @@ class ReviewListEntry extends React.Component {
 }
 
 export default ReviewListEntry;
+
+/*
+<Fragment>
+  <div>★★★★☆ April 30, 2020</div>
+  <div>Title: Awesome shoe!</div>
+  <div>Text: Comfortable, it has great style</div>
+  <div>✓I recommend this product</div>
+  <div>user: vanesa4</div>
+  <div>Was this review helpful? Yes (0) No (0)</div>
+  <div>---------------------------------------</div>
+</Fragment>
+*/

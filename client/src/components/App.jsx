@@ -28,19 +28,26 @@ class App extends React.Component {
 
   // Set State
   changeReviews(reviews) {
-    this.setState({ reviews: reviews });
+    this.setState({ reviews }, ()=>console.log(this.state.reviews));
   }
 
   render() {
+    let {reviews} = this.state;
     return (
       <Fragment>
-        <div className="sidebar">
-          <RatingTally />
-          <StatChart />
+        <div className="above"></div>
+          
+        <div className="review-module">
+          <div className="sidebar">
+            <RatingTally />
+            <StatChart />
+          </div>
+          <div className="main">
+            <ReviewList reviews={reviews}/>
+          </div>
         </div>
-        <div className="main">
-          <ReviewList />
-        </div>
+        
+        <div className="below"></div>
       </Fragment>
     );
   }
