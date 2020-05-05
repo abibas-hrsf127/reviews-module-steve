@@ -34,6 +34,7 @@ npm install express morgan body-parser
 npm install mysql
 npm install axios
 npm install underscore lodash
+npm install styled-components
 npm install -D babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/cli @babel/polyfill
 npm install -D webpack webpack-cli
 npm install -D nodemon
@@ -96,12 +97,14 @@ Client-side
 
 ### Set up Jest and Enzyme
 
-#### Sideproject A: Same environment
+[Jest Official Docs](https://jestjs.io/docs/en/getting-started)
 
+[Enzyme Official Docs](https://enzymejs.github.io/enzyme/)
 
 [Adeel Imran Tutorial](https://www.freecodecamp.org/news/how-to-combine-webpack-4-and-babel-7-to-create-a-fantastic-react-app-845797e036ff/)
 
+### Upgrade from CSS to Styled-Components
 
-
+Use package [jest-styled-components](https://github.com/styled-components/jest-styled-components) to test
 
 <br>
