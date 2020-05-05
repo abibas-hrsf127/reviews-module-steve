@@ -34,9 +34,10 @@ npm install express morgan body-parser
 npm install mysql
 npm install axios
 npm install underscore lodash
-npm install -D babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/cli
+npm install -D babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/cli @babel/polyfill
 npm install -D webpack webpack-cli
 npm install -D nodemon
+npm install -D jest babel-jest enzyme enzyme-adapter-react-16
 ```
 
 ### Configure package.json
