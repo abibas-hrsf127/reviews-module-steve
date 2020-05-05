@@ -35,8 +35,9 @@ npm install mysql
 npm install axios
 npm install underscore lodash
 npm install styled-components
-npm install -D babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/cli @babel/polyfill
+npm install -D @babel/core @babel/preset-env @babel/preset-react @babel/cli @babel/polyfill
 npm install -D webpack webpack-cli
+npm install -D babel-loader style-loader css-loader
 npm install -D nodemon
 npm install -D jest babel-jest enzyme enzyme-adapter-react-16
 ```
