@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
+import RatingTally from './RatingTally';
+import ReviewList from './ReviewList';
+import StatChart from './StatChart';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,9 +33,18 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        Hello World
-      </div>
+      <Fragment>
+        <div>
+          Hello World
+        </div>
+        <div className="sidebar">
+          <RatingTally />
+          <StatChart />
+        </div>
+        <div className="main">
+          <ReviewList />
+        </div>
+      </Fragment>
     );
   }
 }
