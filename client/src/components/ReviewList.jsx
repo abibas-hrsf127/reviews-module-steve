@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import ReviewListEntry from './ReviewListEntry';
+import ReviewListEntry from './ReviewListEntry.jsx';
 
 class ReviewList extends React.Component {
   constructor(props) {
@@ -18,9 +18,20 @@ class ReviewList extends React.Component {
 
   render() {
     return (
-      <div>
-        Hello World
-      </div>
+      <Fragment>
+        <div className="nav-sort">
+          <div>sort on</div>
+          <button>newest</button>
+          <button>helpful</button>
+          <button>relevant</button>
+        </div>
+        <ReviewListEntry />
+        <ReviewListEntry />
+        <div className="nav-footer">
+          <button>load more</button>
+          <button>write a review --></button>
+        </div>
+      </Fragment>
     );
   }
 }

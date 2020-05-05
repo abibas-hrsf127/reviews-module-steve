@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
-import ReviewListEntry from './ReviewListEntry';
 
-class ReviewList extends React.Component {
+class StatSlider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,11 +17,13 @@ class ReviewList extends React.Component {
 
   render() {
     return (
-      <div>
-        Hello World
-      </div>
+      <Fragment>
+        <div>size</div>
+        <div>---- ---- ---- ---- ----v---- ----</div>
+        <div>too small perfect too large</div>
+      </Fragment>
     );
   }
 }
 
-export default ReviewList;
+export default StatSlider;

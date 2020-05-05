@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
-import ReviewListEntry from './ReviewListEntry';
 
-class ReviewList extends React.Component {
+class ReviewListEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,11 +17,17 @@ class ReviewList extends React.Component {
 
   render() {
     return (
-      <div>
-        Hello World
-      </div>
+      <Fragment>
+        <div>★★★★☆ April 30, 2020</div>
+        <div>Title: Awesome shoe!</div>
+        <div>Text: Comfortable, it has great style</div>
+        <div>✓I recommend this product</div>
+        <div>user: vanesa4</div>
+        <div>Was this review helpful? Yes (0) No (0)</div>
+        <div>---------------------------------------</div>
+      </Fragment>
     );
   }
 }
 
-export default ReviewList;
+export default ReviewListEntry;

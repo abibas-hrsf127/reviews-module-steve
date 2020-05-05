@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import ReviewListEntry from './ReviewListEntry';
+import StatSlider from './StatSlider.jsx';
 
-class ReviewList extends React.Component {
+class StatChart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,11 +18,16 @@ class ReviewList extends React.Component {
 
   render() {
     return (
-      <div>
-        Hello World
-      </div>
+      <Fragment>
+        <div>97%</div>
+        <div>of customers recommend this product</div>
+        <StatSlider />
+        <StatSlider />
+        <StatSlider />
+        <StatSlider />
+      </Fragment>
     );
   }
 }
 
-export default ReviewList;
+export default StatChart;

@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
-import RatingTally from './RatingTally';
-import ReviewList from './ReviewList';
-import StatChart from './StatChart';
+import RatingTally from './RatingTally.jsx';
+import ReviewList from './ReviewList.jsx';
+import StatChart from './StatChart.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       reviews: [],
-      productcode: 1
+      productcode: 'EG4958'
     };
     this.changeReviews = this.changeReviews.bind(this);
   }
@@ -34,9 +34,6 @@ class App extends React.Component {
   render() {
     return (
       <Fragment>
-        <div>
-          Hello World
-        </div>
         <div className="sidebar">
           <RatingTally />
           <StatChart />

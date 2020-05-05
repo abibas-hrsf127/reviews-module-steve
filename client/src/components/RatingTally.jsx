@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import RatingTallyEntry from './RatingTallyEntry';
+import RatingTallyEntry from './RatingTallyEntry.jsx';
 
 class RatingTally extends React.Component {
   constructor(props) {
@@ -19,9 +19,9 @@ class RatingTally extends React.Component {
   render() {
     return (
       <Fragment>
-        <div>RATINGS & REVIEWS</div>
+        <div>ratings & reviews</div>
         <div> 4.7 6860 Reviews</div>
-        <div>RATING BREAKDOWN</div>
+        <div>rating breakdown</div>
         <RatingTallyEntry />
         <RatingTallyEntry />
         <RatingTallyEntry />

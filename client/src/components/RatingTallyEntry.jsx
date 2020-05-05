@@ -18,7 +18,7 @@ class ReviewListEntry extends React.Component {
   render() {
     return (
       <Fragment>
-        <div>RatingTallyEntry</div>
+        <div>5 Stars ========------- 5253</div>
       </Fragment>
     );
   }
