@@ -23,7 +23,7 @@ app.get('/api', (req, res) => {
 
 app.use('/api/models', router);
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../client', 'dist')));
 
 app.listen(app.get('port'), () =>
   console.log('Listening on port: ' + app.get('port')));

@@ -1,7 +1,7 @@
-  
+// webpack.config.js   
 var path = require('path');
-var SRC_DIR = path.join(__dirname, '/client/src');
-var DIST_DIR = path.join(__dirname, '/client/dist');
+var SRC_DIR = path.join(__dirname, 'client', 'src');
+var DIST_DIR = path.join(__dirname, 'client', 'dist');
 
 module.exports = {
   mode: 'development',
@@ -18,7 +18,14 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       } 
     ]
-  }
+  },
+  resolve: {
+    extensions: [".js", ".json", ".jsx", ".css"],
+  },
 };
