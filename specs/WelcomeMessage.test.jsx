@@ -1,6 +1,6 @@
 /* eslint-disable func-style */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount, render } from 'enzyme';
 
 // Components
 import WelcomeMessage from '../client/src/components/WelcomeMessage';
