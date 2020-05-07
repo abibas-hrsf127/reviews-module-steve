@@ -18,7 +18,7 @@ class StatSlider extends React.Component {
   render() {
     return (
       <Fragment>
-        <div>size</div>
+        <div className='text'>size</div>
         <div>---- ---- ---- ---- ----v---- ----</div>
         <div>too small perfect too large</div>
       </Fragment>

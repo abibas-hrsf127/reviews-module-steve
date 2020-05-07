@@ -2,13 +2,15 @@ import React, { Fragment } from 'react';
 import RatingTally from './RatingTally.jsx';
 import ReviewList from './ReviewList.jsx';
 import StatChart from './StatChart.jsx';
+import fetch from 'node-fetch';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       reviews: [],
-      productcode: 'EG4958'
+      productcode: '1'
     };
     this.changeReviews = this.changeReviews.bind(this);
   }
@@ -20,21 +22,23 @@ class App extends React.Component {
   // HTTP Request Handlers
   fetchReviews() {
     let url = `/api/models/${this.state.productcode}/reviews`;
-    fetch(url)
-      .then(response => response.json())
+    // fetch(url)
+    // .then(response => response.json()) 
+    axios(url)
+      .then(response => response.data)
       .then(reviewsData => this.changeReviews(reviewsData))
       .catch(err => console.error(err));
   }
 
   // Set State
   changeReviews(reviews) {
-    this.setState({ reviews }, ()=>console.log(this.state.reviews));
+    this.setState({ reviews }, ()=>console.log('set state:', this.state.reviews));
   }
 
   render() {
     let {reviews} = this.state;
     return (
-      <Fragment>
+      <div>
         <div className="above"></div>
           
         <div className="review-module">
@@ -48,7 +52,7 @@ class App extends React.Component {
         </div>
         
         <div className="below"></div>
-      </Fragment>
+      </div>
     );
   }
 }

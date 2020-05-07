@@ -1,3 +1,4 @@
+// enzyme.config.js
 /** Used in jest.config.js */
 
 import { configure } from 'enzyme';
