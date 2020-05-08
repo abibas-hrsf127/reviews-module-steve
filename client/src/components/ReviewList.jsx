@@ -1,5 +1,15 @@
 import React, { Fragment } from 'react';
+import styled from 'styled-components';
 import ReviewListEntry from './ReviewListEntry.jsx';
+
+const Button = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
 
 class ReviewList extends React.Component {
   constructor(props) {
@@ -21,9 +31,9 @@ class ReviewList extends React.Component {
       <Fragment>
         <div className="nav-sort">
           <div>sort on</div>
-          <button>newest</button>
-          <button>helpful</button>
-          <button>relevant</button>
+          <Button>newest</Button>
+          <Button>helpful</Button>
+          <Button>relevant</Button>
         </div>
         {this.props.reviews.map((review) => 
           <ReviewListEntry key={review.id} review={review}/>

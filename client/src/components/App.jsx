@@ -5,6 +5,8 @@ import StatChart from './StatChart.jsx';
 import fetch from 'node-fetch';
 import axios from 'axios';
 
+// import othersbought from '../../dist/images/OthersBought-small.png';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +41,8 @@ class App extends React.Component {
     let {reviews} = this.state;
     return (
       <div>
-        <div className="above"></div>
+        <div className="above">
+        </div>
           
         <div className="review-module">
           <div className="sidebar">
@@ -51,7 +54,9 @@ class App extends React.Component {
           </div>
         </div>
         
-        <div className="below"></div>
+        <div className="below">
+          {/* <img src="../../dist/images/OthersBought-small.png" alt="Others Bought Image Carousel" /> */}
+        </div>
       </div>
     );
   }

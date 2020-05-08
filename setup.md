@@ -42,6 +42,7 @@ npm install -D babel-loader style-loader css-loader
 npm install -D nodemon
 npm install -D jest babel-jest enzyme enzyme-adapter-react-16
 npm install -D sinon
+npm install -D babel-plugin-styled-components
 ```
 
 ### Configure package.json
