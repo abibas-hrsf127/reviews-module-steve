@@ -8,7 +8,7 @@ const middleware = require('./middleware.js');
 const router = require('./routes.js');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3254;
 app.set('port', PORT);
 
 // app.use(bodyParser.json());
