@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import styled from 'styled-components';
 import RatingTally from './RatingTally.jsx';
 import ReviewList from './ReviewList.jsx';
 import StatChart from './StatChart.jsx';
@@ -6,6 +7,13 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 
 // import othersbought from '../../dist/images/OthersBought-small.png';
+
+const ImageBackground = styled.div`
+ background-image: url(${(props) => props.url});
+height: 1000px;
+width: 1000px;
+background-size: 100%;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -41,8 +49,10 @@ class App extends React.Component {
     let {reviews} = this.state;
     return (
       <div>
-        <div className="above">
-        </div>
+        <ImageBackground url="./images/OthersBought-small.png" ></ImageBackground>
+
+      <div>
+        
           
         <div className="review-module">
           <div className="sidebar">
@@ -57,6 +67,7 @@ class App extends React.Component {
         <div className="below">
           {/* <img src="../../dist/images/OthersBought-small.png" alt="Others Bought Image Carousel" /> */}
         </div>
+      </div>
       </div>
     );
   }
