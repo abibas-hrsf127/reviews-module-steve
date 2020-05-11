@@ -15,7 +15,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "build": "babel ./client/src/ --out-dir compiled --presets @babel/preset-react --source-maps inline --watch",
-    "seed": "mysql -u root < schema.sql"
+    "seed": "mysql -u root -p < schema.sql"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",

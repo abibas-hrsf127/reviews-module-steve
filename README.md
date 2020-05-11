@@ -17,7 +17,32 @@ Reviews module for e-commerce website of Front End Capstone Project #HRSF127
 
 ## Usage
 
-> Some usage instructions
+### Seeding the MySQL Database
+
+```sh
+cp db-mysql/config.example.js db-mysql/config.js
+```
+Make sure that the new config.js file is ignored by Git, then update `user` and `password` with your MySQL credentials. It is currently defaulted to `root` and ` `.
+
+```sh
+brew services list
+brew services start mysql@5.7
+```
+Start your MySQL database. Your version may differ.
+
+```sh
+npm run seed
+```
+Your database is now seeded.
+
+### Starting the Server
+
+```sh
+npm run react-dev
+npm run server-dev
+```
+
+This will run the project with a seeded MySQL database on [localhost:3003](http://localhost:3003) 
 
 ## Requirements
 
@@ -52,13 +77,3 @@ npm install
 This procedure explains how to install [MySQL](https://www.mysql.com) using [Homebrew](http://brew.sh) on macOS (Sierra 10.12 and up)
 
 https://gist.github.com/operatino/392614486ce4421063b9dece4dfe6c21
-
-### Starting the Server
-
-```sh
-npm run seed
-npm run react-dev
-npm run server-dev
-```
-
-This will run the project with a seeded MySQL database on [localhost:3000](http://localhost:3000) 

@@ -1,6 +1,6 @@
 module.exports = {
   host: 'localhost',
-  user: 'ENTERUSERHERE',
-  password: 'ENTERPASSWORDHERE',
-  database: 'ENTERDATABASEHERE'
+  user: 'root',
+  password: '',
+  database: 'adidas_fec'
 };
