@@ -33,6 +33,9 @@ const Button = styled.button`
 
   transition: color .1s cubic-bezier(.3,0,.45,1);
   width: 100%;
+  margin: 0;
+  background: none;
+  border: none;
   &:focus {
     outline: none;
   }
@@ -147,13 +150,6 @@ class ReviewList extends React.Component {
       
     };
   }
-
-  componentDidMount() {
-  }
-
-  // HTTP Request Handlers
-  // Set State
-  // Event Handlers
 
   render() {
     return (
