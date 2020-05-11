@@ -19,7 +19,6 @@ class RatingTally extends React.Component {
   render() {
     return (
       <Fragment>
-        <div>ratings & reviews</div>
         <div> 4.7 6860 Reviews</div>
         <div>rating breakdown</div>
         <RatingTallyEntry />
