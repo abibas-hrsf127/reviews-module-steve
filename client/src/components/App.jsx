@@ -107,7 +107,7 @@ class App extends React.Component {
 
   // HTTP Request Handlers
   fetchReviews() {
-    let url = `/api/models/${this.state.productcode}/reviews`;
+    let url = `http://localhost:3003/api/models/${this.state.productcode}/reviews`;
     // fetch(url)
     // .then(response => response.json()) 
     axios(url)
@@ -125,7 +125,6 @@ class App extends React.Component {
     let {reviews} = this.state;
     return (
       <Body>
-        <Image url="images/IGFeed-small.png"/>
 
         <ReviewModule>
           <Heading>Ratings & Reviews</Heading>
@@ -140,8 +139,6 @@ class App extends React.Component {
           </ContentWrapper>
         </ReviewModule>
         
-        <Image url="./images/reviewsnew-small.png" />
-        <Image url="./images/OthersBought-small.png"/>
       </Body>
     );
   }
