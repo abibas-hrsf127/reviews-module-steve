@@ -55,7 +55,7 @@ const ReviewListEntry = (props) => (
     <Text>{props.review.text}</Text>
     <Recommend>✓ I recommend this product</Recommend>
     <DontRecommend>x I do not recommend this product</DontRecommend>
-    <User> vanesa4</User>
+    <User>{props.review.user_nickname}</User>
     <div>Was this review helpful? Yes (0) No (0)</div>
   </CollectionItem>
 );
