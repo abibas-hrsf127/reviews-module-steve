@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
+const cors = require('cors');
 
 const middleware = require('./middleware.js');
 const router = require('./routes.js');
@@ -15,6 +16,7 @@ app.set('port', PORT);
 // app.use(morgan('dev'));
 app.use(express.json());
 app.use(middleware.httpRequestLogger);
+app.use(cors());
 
 app.get('/api', (req, res) => {
   console.log('hello inside get route');

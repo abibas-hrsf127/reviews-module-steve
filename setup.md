@@ -30,7 +30,7 @@ README.md
 ```sh
 npm init
 npm install react react-dom
-npm install express morgan body-parser
+npm install express morgan body-parser cors
 npm install mysql
 npm install axios
 npm install underscore lodash
