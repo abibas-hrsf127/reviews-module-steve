@@ -40,4 +40,4 @@ config.js
 
 # Docker
 Dockerfile
-docker-compose.yml
+docker-compose*
