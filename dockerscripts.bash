@@ -16,6 +16,9 @@ docker login
 docker image push <YourDockerID>/firstimage
 docker push alexzhaohong/reviewsfecserver:tagname
 docker pull alexzhaohong/reviewsfecserver:latest
+docker run -d -p 3003:3003 --name reviewscontainer alexzhaohong/reviewsfecserver
+open http://localhost:3003
+
 # 4-Containerized_Development_With_Volumes
 docker logs <container-name>
 docker volume ls
