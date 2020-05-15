@@ -1,29 +1,30 @@
 version: '3.4'
 
 services:
-  mysql_db_container:
+  mysql:
     image: mysql:5.7
-    command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER_FILE: /seed/mysql.user
+      MYSQL_PASSWORD_FILE: /seed/mysql.pass 
+      MYSQL_ROOT_PASSWORD_FILE: /seed/mysql.pass
       MYSQL_DATABASE: adidas_fec
-    ports:
-      - 3306:3306
     volumes:
-      - mysql_db_data_container:/var/lib/mysql
-  reviews-module:
-    image: reviews-module
+      - type: bind
+        source: ./seed
+        target: /seed
+  reviews:
     build: .
     environment:
       NODE_ENV: production
+    depends_on:
+        - 'mysql'
     ports:
       - '3003:3003'
   adminer_container:
     image: adminer:latest
     environment:
-      ADMINER_DEFAULT_SERVER: mysql_db_container
+      ADMINER_DEFAULT_SERVER: mysql
     ports:
-      - 8080:8080
-volumes: 
-  mysql_db_data_container:
+      - '8080:8080'
+

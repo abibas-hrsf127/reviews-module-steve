@@ -5,6 +5,7 @@ import ReviewList from './ReviewList.jsx';
 import StatChart from './StatChart.jsx';
 import fetch from 'node-fetch';
 import axios from 'axios';
+import sampledata from '../sampledata';
 
 const Body = styled.div`
 box-sizing: border-box;
@@ -95,7 +96,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [],
+      reviews: sampledata,
       productcode: '1'
     };
     this.changeReviews = this.changeReviews.bind(this);
