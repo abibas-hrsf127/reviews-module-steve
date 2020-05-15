@@ -36,7 +36,7 @@ bundle.js
 
 # My things
 bower_components
-config.js
+# config.js
 
 # Docker
 # Dockerfile
