@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 # Does your app have any dependencies that should be installed?
 RUN npm install --production --silent && mv node_modules ../
-RUN npm run webpack -d
+RUN npm run build:bundle
 COPY . .
 # What port will the container talk to the outside world with once created?
 EXPOSE 3003
