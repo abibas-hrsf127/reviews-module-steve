@@ -11,7 +11,7 @@ COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 # Does your app have any dependencies that should be installed?
 RUN npm install --production --silent && mv node_modules ../
 COPY . .
-RUN npm run build:bundle
+# RUN npm run build:bundle # maybe i'll try this out later
 # What port will the container talk to the outside world with once created?
 EXPOSE 3003
 # How do you start your app?
