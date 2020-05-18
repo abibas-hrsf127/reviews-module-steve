@@ -6,6 +6,7 @@ import StatChart from './StatChart.jsx';
 import fetch from 'node-fetch';
 import axios from 'axios';
 import sampledata from '../sampledata';
+import Footer from './Footer.jsx';
 
 const Body = styled.div`
 box-sizing: border-box;
@@ -15,7 +16,7 @@ font-weight: 400;
 background-color: #fff;
 color: #000;
 margin: 0;
-overflow-y: scroll;
+/* overflow-y: scroll; */
 padding: 0;
 text-rendering: optimizeLegibility;
 text-transform: none;
@@ -140,7 +141,7 @@ class App extends React.Component {
             </ReviewDiv>
           </ContentWrapper>
         </ReviewModule>
-        
+        <Footer />
       </Body>
     );
   }
