@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node ./server/index.js",
     "server-dev": "open http://localhost:3003 && nodemon ./server/index.js ",
-    "build:bundle": "webpack",
+    "build:bundle": "webpack -d",
     "react-dev": "webpack -d --watch",
     "test": "jest",
     "test:init": "jest --init",
