@@ -124,7 +124,7 @@ docker exec -it reviewscontainer sh
 docker rm -f reviewscontainer
 docker rmi alexzhaohong/reviewsfecserver:latest
 # 6
-docker-compose up
+docker-compose up -d
 docker-compose up -d --build
 docker-compose down -v --rmi all
 # 5-Make_Multiple_Containers_Work_Together
