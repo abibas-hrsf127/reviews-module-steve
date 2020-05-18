@@ -49,7 +49,7 @@ const FooterControls = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 40px;
+  margin: 40px 0 2px 0;
 `;
 
 const LoadButton = styled.button`
