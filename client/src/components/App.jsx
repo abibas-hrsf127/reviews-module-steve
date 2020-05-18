@@ -109,8 +109,8 @@ class App extends React.Component {
 
   // HTTP Request Handlers
   fetchReviews() {
-    let url = `http://localhost:3003/api/models/${this.state.productcode}/reviews`;
-    // let url = `/api/models/${this.state.productcode}/reviews`;
+    // let url = `http://localhost:3003/api/models/${this.state.productcode}/reviews`;
+    let url = `/api/models/${this.state.productcode}/reviews`;
     // fetch(url)
     // .then(response => response.json()) 
     axios(url)
