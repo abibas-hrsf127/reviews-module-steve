@@ -104,7 +104,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchReviews();
+    // this.fetchReviews();
   }
 
   // HTTP Request Handlers

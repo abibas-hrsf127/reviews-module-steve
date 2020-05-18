@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  mysql:
+  mysqldb:
     image: mysql:5.7
     restart: always
     environment:
@@ -18,7 +18,7 @@ services:
     environment:
       NODE_ENV: production
     depends_on:
-        - 'mysql'
+        - 'mysqldb'
     ports:
       - '3003:3003'
 
