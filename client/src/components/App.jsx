@@ -109,14 +109,13 @@ class App extends React.Component {
 
   // HTTP Request Handlers
   fetchReviews() {
-    // // let url = `http://localhost:3003/api/models/${this.state.productcode}/reviews`;
     // // fetch(url)
     // // .then(response => response.json()) 
-    // let url = `/api/models/${this.state.productcode}/reviews`;
-    // axios(url)
-    //   .then(response => response.data)
-    //   .then(reviewsData => this.changeReviews(reviewsData))
-    //   .catch(err => console.error(err));
+    let url = `/api/models/${this.state.productcode}/reviews`;
+    axios(url)
+      .then(response => response.data)
+      .then(reviewsData => this.changeReviews(reviewsData))
+      .catch(err => console.error(err));
   }
 
   // Set State
