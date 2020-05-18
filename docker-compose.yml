@@ -21,10 +21,5 @@ services:
         - 'mysql'
     ports:
       - '3003:3003'
-  adminer_container:
-    image: adminer:latest
-    environment:
-      ADMINER_DEFAULT_SERVER: mysql
-    ports:
-      - '8080:8080'
+
 
