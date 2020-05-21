@@ -65,3 +65,9 @@ class RatingTally extends React.Component {
 }
 
 export default RatingTally;
+
+
+// import RatingTally from './RatingTally.jsx';
+// import ReviewList from './ReviewList.jsx';
+// import StatChart from './StatChart.jsx';
+//import Footer from './Footer.jsx'; 
