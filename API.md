@@ -31,8 +31,12 @@
       "subject" :"String",
       "description": "String", 
       "reviewId": "Number",
-      "imageUrl" : "String",
       "category": "String",
+      "images": [ 
+        "String", 
+        "String",
+        "String"
+      ],
     }
 ```
 
@@ -60,7 +64,11 @@
       "userVerified" : "Boolean",
       "subject" :"String",
       "description": "String", 
-      "imageUrl" : "String"
+      "images": [ 
+        "String", 
+        "String",
+        "String"
+      ],
     }
 ```
 
@@ -92,7 +100,11 @@
       "userVerified" : "Boolean",
       "subject" :"String",
       "description": "String", 
-      "imageUrl" : "String"
+      "images": [ 
+        "String", 
+        "String",
+        "String"
+      ],
     }
 ```
 
