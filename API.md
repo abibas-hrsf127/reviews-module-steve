@@ -31,7 +31,8 @@
       "subject" :"String",
       "description": "String", 
       "reviewId": "Number",
-      "imageUrl" : "String"
+      "imageUrl" : "String",
+      "category": "String",
     }
 ```
 
