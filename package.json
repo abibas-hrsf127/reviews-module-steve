@@ -16,7 +16,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "build": "babel ./client/src/ --out-dir compiled --presets @babel/preset-react --source-maps inline --watch",
-    "seed-psql": "psql postgres < schema.sql",
+    "seed-psql": "psql postgres < db/postgresql-db/schema.sql",
     "seed-sql": "mysql -u root < schema.data.sql",
     "build:docker": "./docker_build.sh"
   },
@@ -27,6 +27,9 @@
     "chai": "^4.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.15",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "node-fetch": "^2.6.0",

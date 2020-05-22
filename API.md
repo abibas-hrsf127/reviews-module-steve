@@ -24,7 +24,7 @@
       "ratingQuality": "Number",
       "isHelpful": "Number",
       "notHelpful": "Number",
-      "createdAt": "date YYYY-MM-MM",
+      "createdAt": "Date",
       "userName": "String",
       "email": "String",
       "userVerified" : "Boolean",
@@ -32,16 +32,12 @@
       "description": "String", 
       "reviewId": "Number",
       "category": "String",
-      "images": [ 
-        "String", 
-        "String",
-        "String"
-      ],
+      "reviews": "Array",
     }
 ```
 
 ### Add review
-  * POST `/api/products/:productId/reviews`
+  * POST `/api/products/:productId/review`
 
 **Success Status Code:** `201`
 
@@ -58,17 +54,12 @@
       "ratingWidth": "Number",
       "ratingComfort": "Number",
       "ratingQuality": "Number",
-      "createdAt": "date YYYY-MM-MM",
+      "createdAt": "Date",
       "userName": "String",
       "email": "String",
       "userVerified" : "Boolean",
       "subject" :"String",
       "description": "String", 
-      "images": [ 
-        "String", 
-        "String",
-        "String"
-      ],
     }
 ```
 
@@ -84,7 +75,7 @@
 **Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
 
 ```json
-     {
+{
       "productId": "Number",
       "userId": "Number",
       "productName": "String",
@@ -94,17 +85,12 @@
       "ratingWidth": "Number",
       "ratingComfort": "Number",
       "ratingQuality": "Number",
-      "createdAt": "date YYYY-MM-MM",
+      "createdAt": "Date",
       "userName": "String",
       "email": "String",
       "userVerified" : "Boolean",
       "subject" :"String",
       "description": "String", 
-      "images": [ 
-        "String", 
-        "String",
-        "String"
-      ],
     }
 ```
 
