@@ -44,18 +44,4 @@ const ReviewsModel = mongoose.model('reviews', reviewsSchema);
 const UserModel = mongoose.model('user', userSchema);
 
 
-// const data = {
-//   reviewsId: [1, 2],
-//   userId: 1,
-//   userName: 'stevemarquez',
-//   email: 'steveantonio@gmail.com',
-// };
-
-//console.log(UserModel.find({}));
-// UserModel.create(data).then((product) => {
-//   console.log(product);
-// }).catch((err) => { console.log(err); });
-
-
-
 module.exports = { ProductModel, ReviewsModel, UserModel };
