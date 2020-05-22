@@ -120,10 +120,11 @@ class App extends React.Component {
 
   // Set State
   changeReviews(reviews) {
-    this.setState({ reviews }, ()=>console.log('set state:', this.state.reviews));
+    this.setState({ reviews });
   }
 
   render() {
+    console.log(this.state);
     let {reviews} = this.state;
     return (
       <Body>
@@ -132,7 +133,7 @@ class App extends React.Component {
           <Heading>Ratings & Reviews</Heading>
           <ContentWrapper width={window.innerWidth}>
             <StatsSideDiv>
-              <RatingTally/>
+              <RatingTally/> 
               <StatChart/>
             </StatsSideDiv>
             <ReviewDiv>
@@ -145,5 +146,7 @@ class App extends React.Component {
     );
   }
 }
+
+
 
 export default App;
