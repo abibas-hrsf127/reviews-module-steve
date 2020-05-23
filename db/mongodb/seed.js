@@ -1,6 +1,7 @@
 const faker = require('faker');
 const ProductsModel = require('./index.js');
 
+
 async function seedMongo(outer, inner) {
     let counter = 0; 
     
@@ -10,9 +11,10 @@ async function seedMongo(outer, inner) {
         for (let i = 0; i < inner; i++) {
 
             let object = {
-                productId: counter,
+                productId: faker.random.number({ 'min': 1, 'max': 1000 }),
                 productName: faker.lorem.word(),
-                reviews: [{
+                reviews: [    
+                    {
                     userName: faker.lorem.word(),
                     email: faker.internet.email(),
                     category: faker.random.arrayElement(['comfort', 'price', 'quality', 'satisfaction', 'color']),
@@ -26,7 +28,8 @@ async function seedMongo(outer, inner) {
                     ratingQuality: faker.random.arrayElement(['Poor', 'Below average', 'What I expected', 'Pretty great', 'Perfect']),
                     isHelpful: faker.random.boolean(),
                     createdAt: faker.date.between('2000-01-01', '2019-12-31'),
-                    }]
+                    }
+                    ]
                 }
                 arrResults.push(object);
                 counter++;
