@@ -16,7 +16,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "build": "babel ./client/src/ --out-dir compiled --presets @babel/preset-react --source-maps inline --watch",
-    "seed-psql": "psql postgres < db/postgresql-db/schema.sql",
+    "seed-psql": "psql postgres < db/psql/schema.sql",
     "seed-sql": "mysql -u root < schema.data.sql",
     "build:docker": "./docker_build.sh"
   },
