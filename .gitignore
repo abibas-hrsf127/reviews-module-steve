@@ -41,3 +41,5 @@ bower_components
 # Docker
 # Dockerfile
 # docker-compose*
+# Delete seeding data
+data

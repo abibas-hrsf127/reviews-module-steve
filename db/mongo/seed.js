@@ -1,7 +1,6 @@
 const faker = require('faker');
 const ProductsModel = require('./index.js');
 
-
 async function seedMongo(outer, inner) {
     let counter = 0; 
     
