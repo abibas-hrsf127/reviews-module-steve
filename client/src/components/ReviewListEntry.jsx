@@ -50,9 +50,9 @@ const User = styled.div`
 const ReviewListEntry = (props) => (
   <CollectionItem>
     <Stars>★★★★★</Stars>
-    <Time>April 30, 2020</Time>
-    <Title>{props.review.title}</Title>
-    <Text>{props.review.text}</Text>
+    <Time>{props.review.createdat}</Time>
+    <Title>{props.review.subject}</Title>
+    <Text>{props.review.description}</Text>
     <Recommend>✓ I recommend this product</Recommend>
     <DontRecommend>x I do not recommend this product</DontRecommend>
     <User>{props.review.user_nickname}</User>

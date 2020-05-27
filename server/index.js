@@ -12,16 +12,16 @@ const app = express();
 const PORT = process.env.REVIEWSPORT || 3003;
 app.set('port', PORT);
 
-// app.use(bodyParser.json());
-// app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(middleware.httpRequestLogger);
 app.use(cors());
 
-app.get('/api', (req, res) => {
-  console.log('hello inside get route');
-  res.send('response sent correctly!');
-});
+// app.get('/api', (req, res) => {
+//   console.log('hello inside get route');
+//   res.send('response sent correctly!');
+// });
 
 app.use('/api/models', router);
 
