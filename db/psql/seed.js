@@ -72,6 +72,14 @@ const writeReviews7 = fs.createWriteStream(
   path.join(__dirname, "../../data/reviews7.csv"),
   "utf8"
 );
+const writeReviews8 = fs.createWriteStream(
+  path.join(__dirname, "../../data/reviews8.csv"),
+  "utf8"
+);
+const writeReviews9 = fs.createWriteStream(
+  path.join(__dirname, "../../data/reviews9.csv"),
+  "utf8"
+);
 
 function seedingReviews(writer, encoding, amount, callback) {
   let userId = 1;
@@ -82,7 +90,8 @@ function seedingReviews(writer, encoding, amount, callback) {
     do {
       amount -= 1;
 
-      const isHelpful = faker.random.boolean();
+      const isHelpful = faker.random.number({ min: 0, max: 1000 });
+      const isNotHelpful = faker.random.number({ min: 0, max: 1000 });
       const createdAt = faker.date
         .between("2020-01-01", "2020-05-05")
         .toString()
@@ -127,7 +136,7 @@ function seedingReviews(writer, encoding, amount, callback) {
       ]);
       const productId = faker.random.number({ min: 1, max: 10000 });
 
-      const data = `${userId},${productId},${isHelpful},${createdAt},${isRecommended},${subject},${description},${ratingSize},${ratingQuality},${ratingWidth},${ratingComfort},${category}\n`;
+      const data = `${userId},${productId},${isHelpful},${isNotHelpful},${createdAt},${isRecommended},${subject},${description},${ratingSize},${ratingQuality},${ratingWidth},${ratingComfort},${category}\n`;
 
       userId === 10000 ? (userId = 1) : (userId += 1);
 
@@ -146,39 +155,49 @@ function seedingReviews(writer, encoding, amount, callback) {
 
 seedUsers();
 seedProducts(10000);
-seedingReviews(writeReviews1, "utf-8", 1500000, () => {
+seedingReviews(writeReviews1, "utf-8", 1100000, () => {
   console.log("...done1");
   console.time();
   writeReviews1.end();
   console.timeEnd();
 });
-seedingReviews(writeReviews2, "utf-8", 1500000, () => {
+seedingReviews(writeReviews2, "utf-8", 1100000, () => {
   console.log("...done2");
   console.time("seed time2");
   writeReviews2.end();
 });
-seedingReviews(writeReviews3, "utf-8", 1500000, () => {
+seedingReviews(writeReviews3, "utf-8", 1100000, () => {
   console.log("...done3");
   console.time("seed time3");
   writeReviews3.end();
 });
-seedingReviews(writeReviews4, "utf-8", 1500000, () => {
+seedingReviews(writeReviews4, "utf-8", 1100000, () => {
   console.log("...done4");
   console.time("seed time4");
   writeReviews4.end();
 });
-seedingReviews(writeReviews5, "utf-8", 1500000, () => {
+seedingReviews(writeReviews5, "utf-8", 1100000, () => {
   console.log("...done5");
   console.time("seed time5");
   writeReviews5.end();
 });
-seedingReviews(writeReviews6, "utf-8", 1500000, () => {
+seedingReviews(writeReviews6, "utf-8", 1300000, () => {
   console.log("...done6");
   console.time("seed time6");
   writeReviews6.end();
 });
-seedingReviews(writeReviews7, "utf-8", 1000000, () => {
+seedingReviews(writeReviews7, "utf-8", 1100000, () => {
   console.log("...done7");
   console.time("seed time7");
   writeReviews7.end();
+});
+seedingReviews(writeReviews8, "utf-8", 1100000, () => {
+  console.log("...done8");
+  console.time("seed time8");
+  writeReviews8.end();
+});
+seedingReviews(writeReviews9, "utf-8", 1000000, () => {
+  console.log("...done9");
+  console.time("seed time9");
+  writeReviews9.end();
 });
