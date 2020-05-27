@@ -9,7 +9,7 @@ const seedUsers = () => {
     const nickname = faker.internet.userName();
     const email = faker.internet.email();
     const userVerified = faker.random.boolean();
-    fileContent += `'${nickname}', '${email}', ${userVerified}\n`;
+    fileContent += `${nickname}, ${email}, ${userVerified}\n`;
   }
   fs.writeFile(
     path.join(__dirname, "../../data/users.csv"),
@@ -29,7 +29,7 @@ const seedProducts = (quantity) => {
   for (let i = 1; i <= quantity; i += 1) {
     const productName = faker.commerce.productName();
     const ratingOverall = faker.random.number({ min: 1, max: 5 });
-    fileContent += `'${productName}', ${ratingOverall}\n`;
+    fileContent += `${productName}, ${ratingOverall}\n`;
   }
   fs.writeFile(
     path.join(__dirname, "../../data/products.csv"),
