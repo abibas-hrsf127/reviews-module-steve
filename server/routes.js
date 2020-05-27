@@ -12,6 +12,6 @@ var router = require('express').Router();
 // postgres db
 router.get('/:productId/reviews', controller.reviews.get);
 router.post('/reviews', controller.reviews.post);
+router.put('/reviews', controller.reviews.put);
 module.exports = router;
 
-// server flow: index.js -> routes -> controller -> model -> db-mysql

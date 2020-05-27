@@ -28,8 +28,9 @@ const { cbQueryHandler } = require("./handlers");
 module.exports = {
   reviews: {
     get: function (id, callback) {
-      const query = `SELECT * FROM reviews where productId=${id} limit 2`;
-      pool.query(query, cbQueryHandler(callback));
+      const query = 'SELECT products.productName, products.ratingOverall, users.email, users.nickname, users.userVerified, reviews.reviewsId,reviews.productId, reviews.isHelpful,reviews.isNotHelpful, reviews.createdAt, reviews.isRecommended, reviews.subject, reviews.description, reviews.ratingSize, reviews.ratingQuality, reviews.ratingWidth, reviews.ratingComfort, reviews.category FROM reviews, users, products WHERE products.productId = $1 AND reviews.userId=users.userId AND reviews.productId=products.productId limit 10';
+
+      pool.query(query, [id], cbQueryHandler(callback));
     },
     post: function (data, callback) {
       let {
@@ -47,10 +48,10 @@ module.exports = {
         category
       } = data.body;
       
-      let queryString = 'INSERT INTO reviews(userId,productId,isHelpful,createdAt,isRecommended,subject,description,ratingSize,ratingQuality,ratingWidth,ratingComfort,category) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)';
+      let query = 'INSERT INTO reviews(userId,productId,isHelpful,createdAt,isRecommended,subject,description,ratingSize,ratingQuality,ratingWidth,ratingComfort,category) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)';
 
       pool.query(
-        queryString,
+        query,
         [
           userId,
           productId,
@@ -66,6 +67,11 @@ module.exports = {
           category,
         ],cbQueryHandler(callback)
       );
+    },
+    put: function(data, callback) {
+      const {subject, description, reviewsId } = data.body;
+      const query = 'UPDATE reviews SET subject = $1, description = $2 WHERE reviewsId = $3';
+      pool.query(query, [subject, description, reviewsId], cbQueryHandler(callback)) ;
     },
   },
 };

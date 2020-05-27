@@ -54,10 +54,10 @@ module.exports = {
     get: function (req, res) {
       models.reviews.get(req.params.productId, (err, results) => {
         if (err) {
-          console.error("controller error from getting message: ", err);
+          console.log("ERROR Object.keys():", Object.keys(err))
           res.status(500).send(err);
         } else {
-          res.send(results.rows);
+          res.status(200).send(results.rows);
         }
       });
     },
@@ -67,9 +67,19 @@ module.exports = {
           console.log("ERROR Object.keys():", Object.keys(err))
           res.status(500).send(err);
         } else {
-          res.send(results);
+          res.status(200).send(results);
         }
       });
+    },
+    put: function(req, res) {
+      models.reviews.put(req, (err, results) => {
+        if (err) {
+          console.log("ERROR Object.keys():", Object.keys(err))
+          res.status(500).send(err);
+        } else {
+          res.status(200).send(results);
+        }
+      })
     },
   },
 };
