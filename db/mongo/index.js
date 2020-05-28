@@ -1,35 +1,37 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 let options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true
+  useCreateIndex: true,
 };
 
-mongoose.connect('mongodb://localhost/reviews', options);
+mongoose.connect("mongodb://localhost/reviews", options);
 
 const Schema = mongoose.Schema;
 
 const productsSchema = new Schema({
-  productId: {type: Number, required: true},
+  productId: { type: Number, required: true },
   productName: { type: String, required: true },
-
-  reviews: [{
-    userName: { type: String },
-    email: { type: String, required: true},
-    category: { type: String },
-    subject: { type: String, required: true },
-    description: { type: String },
-    ratingOverall: { type: Number, min: 1, max: 5, required: true },
-    isRecommended: { type: Boolean, required: true },
-    ratingSize: { type: String, required: true },
-    ratingWidth: { type: String, required: true },
-    ratingComfort: { type: String, required: true },
-    ratingQuality: { type: String, required: true },
-    isHelpful: Boolean,
-    createdAt: { type: Date, default: Date.now },
-  }]
+  ratingOverall: { type: Number, required: true},
+  reviews: [
+    {
+      userVerified: { type: Boolean },
+      nickname: { type: String },
+      email: { type: String, required: true },
+      category: { type: String },
+      subject: { type: String },
+      description: { type: String },
+      isRecommended: { type: Boolean, required: true },
+      ratingSize: { type: String, required: true },
+      ratingWidth: { type: String, required: true },
+      ratingComfort: { type: String, required: true },
+      ratingQuality: { type: String, required: true },
+      isHelpful: { type: Number },
+      isNotHelpful: { type: Number },
+      createdAt: { type: Date, default: Date.now },
+    },
+  ],
 });
-
 
 // const reviewsSchema = new Schema({
 //   // category: { type: String },
@@ -60,12 +62,9 @@ const productsSchema = new Schema({
 //     { type: Schema.Types.ObjectId, ref: 'reviews' }
 //   ]
 // });
-
-
-const ProductsModel = mongoose.model('product', productsSchema);
 // const ReviewsModel = mongoose.model('reviews', reviewsSchema);
 // const UserModel = mongoose.model('user', userSchema);
 // const product = new ProductModel();
 
-
-module.exports = { ProductsModel};
+const ProductsModel = mongoose.model("product", productsSchema);
+module.exports = ProductsModel ;

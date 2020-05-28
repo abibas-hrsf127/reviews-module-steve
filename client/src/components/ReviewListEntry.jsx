@@ -33,10 +33,13 @@ const Title = styled.header`
 const Text = styled.div`
   margin-top: 10px 0 0 0;
 `;
-const Recommendation = styled.span`
+const Recommend = styled.span`
   margin-top: 20px 0 0 0;
 `;
-
+const DontRecommend = styled.span`
+  // display: none;
+  margin: 20px 0 0 0;
+`;
 const User = styled.div`
   text-transform: uppercase;
   font-family: AdihausDIN, Helvetica, Arial, sans-serif;
@@ -46,21 +49,30 @@ const User = styled.div`
   margin: 10px 0 14px 0;
 `;
 
-const ReviewListEntry = (props) => (
+class ReviewListEntry extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
   <CollectionItem>
     <Stars>★★★★★</Stars>
-    <Time>{props.review.createdat}</Time>
-    <Title>{props.review.subject}</Title>
-    <Text>{props.review.description}</Text>
-    {props.review.isRecommended === false ? (
-      <Recommendation>x I do not recommend this product</Recommendation>
+    <Time>{this.props.review.createdat}</Time>
+    <Title>{this.props.review.subject}</Title>
+    <Text>{this.props.review.description}</Text>
+    <>
+      {this.props.review.isrecommended ? (
+        <Recommend>✓ I recommend this product</Recommend>
       ) : (
-      <Recommendation>✓ I recommend this product</Recommendation>
-    )}
-    <User>{props.review.nickname}</User>
-    <div>Was this review helpful? Yes ({props.review.isHelpful}) No ({props.review.isNotHelpful})</div>
+        <DontRecommend>x I do not recommend this product</DontRecommend>
+      )}
+    </>
+    <User>{this.props.review.nickname}</User>
+    <div>Was this review helpful? Yes ({this.props.review.ishelpful}) No ({this.props.review.isnothelpful})</div>
   </CollectionItem>
-);
+    )
+  }
+}
 
 export default ReviewListEntry;
 

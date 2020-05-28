@@ -161,6 +161,7 @@ class ReviewList extends React.Component {
             <MenuItem><Button>relevant</Button></MenuItem>
           </ToggleMenu>
         </div>
+
         {this.props.reviews.map((review, i) => 
           <ReviewListEntry key={i} review={review}/>
         )}

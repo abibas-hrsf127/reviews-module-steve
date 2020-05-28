@@ -9,9 +9,12 @@ var router = require('express').Router();
 
 // router.post('/users', controller.users.post);
 
-// postgres db
+//-------------PostgreSQL-DB && MongoDB--------------\\
 router.get('/:productId/reviews', controller.reviews.get);
 router.post('/reviews', controller.reviews.post);
 router.put('/reviews', controller.reviews.put);
+router.delete('/reviews', controller.reviews.delete);
+
+
 module.exports = router;
 
