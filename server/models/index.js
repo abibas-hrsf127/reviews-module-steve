@@ -77,10 +77,20 @@ module.exports = {
       ProductsModel.insertMany([data.body], cbQueryHandler(callback));
     },
     put: function (data, callback) {
-      const { subject, description, reviewsId } = data.body;
-      const query = "UPDATE reviews SET subject = $1, description = $2 WHERE reviewsId = $3";
-      pool.query(query, [subject, description, reviewsId], cbQueryHandler(callback)
+    const { _id, productId, productName, ratingOverall, reviews} = data.body;
+    const obj = {
+      _id: _id,
+      productId: productId,
+      productName: productName,
+      ratingOverall: ratingOverall,
+      reviews: reviews,
+    };
+    ProductsModel.findByIdAndUpdate( [obj] ,cbQueryHandler(callback))
+    },
+    delete: function (data, callback) {
+      const { _id } = data.body;
+      ProductsModel.findByIdAndDelete( _id, cbQueryHandler(callback)
       );
     },
-  },
+  }
 };
