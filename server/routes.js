@@ -13,6 +13,7 @@ var router = require('express').Router();
 router.get('/:productId/reviews', controller.reviews.get);
 router.post('/reviews', controller.reviews.post);
 router.put('/reviews', controller.reviews.put);
+router.put('/:productId/reviews', controller.reviews.put);
 router.delete('/reviews', controller.reviews.delete);
 
 

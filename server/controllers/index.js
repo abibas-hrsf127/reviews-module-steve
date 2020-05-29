@@ -19,7 +19,7 @@ module.exports = {
           console.log("ERROR Object.keys():", Object.keys(err))
           res.status(500).send(err);
         } else {
-          res.status(200).json(results);
+          res.status(200).send(results);
         }
       });
     },
