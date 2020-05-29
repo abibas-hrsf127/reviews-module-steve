@@ -2,7 +2,7 @@ const faker = require("faker");
 const ProductsModel = require("./index.js");
 
 async function seedMongo(outer, inner) {
-  let counter = 0;
+  let counter = 1;
 
   for (let o = 0; o < outer; o++) {
     let arrResults = [];
@@ -14,6 +14,7 @@ async function seedMongo(outer, inner) {
         ratingOverall: faker.random.number({ min: 1, max: 5 }),
         reviews: [
           {
+            reviewId: counter,
             userVerified: faker.random.boolean(),
             nickname: faker.internet.userName(),
             email: faker.internet.email(),
@@ -70,7 +71,7 @@ async function seedMongo(outer, inner) {
         console.log("product seeding progress:", counter);
       }
     }
-    await ProductsModel.ProductsModel.insertMany(arrResults);
+    await ProductsModel.insertMany(arrResults);
   }
 }
 

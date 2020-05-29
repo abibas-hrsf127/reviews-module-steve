@@ -5,9 +5,9 @@ const ProductsModel = require("../../db/mongo/index.js");
 // Postgres && MongoDB
 module.exports = {
   reviews: {
-    // POSTGRES
+//     // POSTGRES
 //     get: function (id, callback) {
-//       const query = "SELECT products.productName, products.ratingOverall, users.email, users.nickname, users.userVerified, reviews.reviewsId,reviews.productId, reviews.isHelpful,reviews.isNotHelpful, reviews.createdAt, reviews.isRecommended, reviews.subject, reviews.description, reviews.ratingSize, reviews.ratingQuality, reviews.ratingWidth, reviews.ratingComfort, reviews.category FROM reviews, users, products WHERE products.productId = $1 AND reviews.userId=users.userId AND reviews.productId=products.productId limit 10";
+//       const query = "SELECT products.productName, products.ratingOverall, users.email, users.nickname, users.userVerified, reviews.reviewsId,reviews.productId, reviews.isHelpful,reviews.isNotHelpful, reviews.createdAt, reviews.isRecommended, reviews.subject, reviews.description, reviews.ratingSize, reviews.ratingQuality, reviews.ratingWidth, reviews.ratingComfort, reviews.category FROM reviews, users, products WHERE products.productId = $1 limit 10";
 
 //       pool.query(query, [id], cbQueryHandler(callback));
 //     },
@@ -68,24 +68,22 @@ module.exports = {
 // };
 
 
-    // ----------------------- MONGO
+    // ---------------- MONGO
     get: function (id, callback) {
       ProductsModel.find(
         { productId: id },
         cbQueryHandler(callback)
-      ).limit(10)
+      ).limit(10);
     },
     post: function(data, callback) {
       ProductsModel.insertMany([data.body], cbQueryHandler(callback));
     },
     put: function (data, callback) {
-        ProductsModel.findOneAndUpdate({ "reviews.email": "Esss@gmail.com" }, { $set: {"reviews.$.isHelpful": 24} }, cbQueryHandler(callback));
-    // ProductsModel.findByIdAndUpdate( [obj] ,cbQueryHandler(callback))
+        ProductsModel.findOneAndUpdate({ "reviews.email": "Esss@gmail.com" }, { $set: {"reviews.$.isHelpful": 24} }, cbQueryHandler(callback)).explain("executionStats");
     },
     delete: function (data, callback) {
       const { _id } = data.body;
-      ProductsModel.findByIdAndDelete( _id, cbQueryHandler(callback)
-      );
+      ProductsModel.findByIdAndDelete( _id, cbQueryHandler(callback));
     },
   }
 };
