@@ -1,9 +1,9 @@
-// server flow: index.js -> routes -> controller -> model -> db-mysql
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
+require('newrelic');
 
 const middleware = require('./middleware.js');
 const router = require('./routes.js');
