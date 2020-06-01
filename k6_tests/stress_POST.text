@@ -1,0 +1,41 @@
+TESTS:
+          /\      |‾‾|  /‾‾/  /‾/   
+     /\  /  \     |  |_/  /  / /    
+    /  \/    \    |      |  /  ‾‾\  
+   /          \   |  |‾\  \ | (_) | 
+  / __________ \  |__|  \__\ \___/ .io
+
+  execution: local
+     output: -
+     script: k6_tests/get.js
+
+    duration: 8 minutes, iterations: - 58966   122.845776/s
+         vus: 1,   max: 300
+
+
+    ✗ status was 200
+     ↳  56% — ✓ 120103 / ✗ 93221
+
+
+    done [==========================================================] 8m0s / 8m0s
+
+    ✗ status was 201
+     ↳  0% — ✓ 0 / ✗ 59184
+
+    checks.....................: 0.00% ✓ 0     ✗ 59184
+    data_received..............: 51 MB 105 kB/s
+    data_sent..................: 41 MB 85 kB/s
+    http_req_blocked...........: avg=9.79µs   min=0s med=6µs     max=5.78ms p(90)=7µs      p(95)=9µs
+    http_req_connecting........: avg=2.57µs   min=0s med=0s      max=1.81ms p(90)=0s       p(95)=0s
+  ✗ http_req_duration..........: avg=263.9ms  min=0s med=56.23ms max=9s     p(90)=658.25ms p(95)=1.14s
+    http_req_receiving.........: avg=88.3µs   min=0s med=80µs    max=9.67ms p(90)=119µs    p(95)=140µs
+    http_req_sending...........: avg=41.78µs  min=0s med=35µs    max=5.85ms p(90)=54µs     p(95)=69µs
+    http_req_tls_handshaking...: avg=0s       min=0s med=0s      max=0s     p(90)=0s       p(95)=0s
+    http_req_waiting...........: avg=263.77ms min=0s med=56.08ms max=9s     p(90)=658.12ms p(95)=1.14s
+    http_reqs..................: 59184 123.299943/s
+    iteration_duration.........: avg=1.26s    min=1s med=1.05s   max=10s    p(90)=1.65s    p(95)=2.14s
+    iterations.................: 58966 122.845776/s
+    vus........................: 1     min=1   max=299
+    vus_max....................: 300   min=300 max=300
+
+ERRO[0489] some thresholds have failed

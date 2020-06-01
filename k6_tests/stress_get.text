@@ -9,7 +9,7 @@ TESTS:
      output: -
      script: k6_tests/get.js
 
-    duration: 11minutes, iterations: -
+    duration: 11minutes, iterations: -   213323         323.216573/s
          vus: 1,   max: 300
 
 

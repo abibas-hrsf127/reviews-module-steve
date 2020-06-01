@@ -2,33 +2,28 @@ import http from "k6/http";
 import { Counter } from "k6/metrics";
 import { group, sleep, check } from "k6";
 var myErrorCounter = new Counter("my_error_counter");
-// export let options = {
-//     stages: [
-//         { duration: '2m', target: 100 },
-//         { duration: '5m', target: 100 },
-//         { duration: '2m', target: 200 },
-//         { duration: '5m', target: 200 },
-//         { duration: '2m', target: 300 },
-//         { duration: '5m', target: 300 },
-//         { duration: '2m', target: 400 },
-//         { duration: '5m', target: 400 },
-//         { duration: '2m', target: 500 },
-//         { duration: '5m', target: 500 },
-//         { duration: '10m', target: 0 },
-//     ],
-//     thresholds: {
-//         'failed requests': ['rate<0.1'],  // system doesn't produce more than 1% error
-//         'http_req_duration': [{ threshold: 'p(95)<500' }]  // response time for 95% of requests should be below 500ms
-//     }
-// };
 export let options = {
-  vus: 10,
-  duration: "2s",
-  thresholds: {
-    "failed requests": ["rate<0.1"], // system doesn't produce more than 1% error
-    http_req_duration: [{ threshold: "p(95)<1500" }], // response time for 95% of requests should be below 500ms
-  },
+    stages: [
+        { duration: '1m', target: 100 },
+        { duration: '1m', target: 100 },
+        { duration: '2m', target: 200 },
+        { duration: '2m', target: 200 },
+        { duration: '1m', target: 300 },
+        { duration: '1m', target: 0 },
+    ],
+    thresholds: {
+        'failed requests': ['rate<0.1'],  // system doesn't produce more than 1% error
+        'http_req_duration': [{ threshold: 'p(95)<500' }]  // response time for 95% of requests should be below 500ms
+    }
 };
+// export let options = {
+//   vus: 100,
+//   duration: "30s",
+//   thresholds: {
+//     "failed requests": ["rate<0.1"], // system doesn't produce more than 1% error
+//     http_req_duration: [{ threshold: "p(95)<1500" }], // response time for 95% of requests should be below 500ms
+//   },
+// };
 
 export default function () {
   const rating = [1,2,3,4,5];
@@ -139,6 +134,7 @@ export default function () {
     productId: randomCount,
     productName: `new item ${randomCount}`,
     ratingOverall: rating[Math.floor(Math.random() * rating.length)],
+
     reviews: [
       {
         review_id: randomCount,
