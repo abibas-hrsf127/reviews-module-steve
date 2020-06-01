@@ -37,7 +37,7 @@
 ```
 
 ### Add review
-  * POST `/api/products/:productId/review`
+  * POST `/api/products/reviews`
 
 **Success Status Code:** `201`
 

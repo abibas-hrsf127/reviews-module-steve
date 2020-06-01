@@ -25,7 +25,9 @@ CREATE TABLE reviews(
   reviewsId SERIAL PRIMARY KEY,
   userId INT NOT NULL,
   productId INT NOT NULL,
-  isHelpful BOOLEAN,
+  isHelpful INT,
+  isNotHelpful INT,
+  createdAt VARCHAR (100),
   isRecommended BOOLEAN,
   subject VARCHAR(200) NOT NULL,
   description VARCHAR(1200) NOT NULL,
@@ -36,15 +38,15 @@ CREATE TABLE reviews(
   category VARCHAR(30) NOT NULL
 );
 
-COPY users(nickname, email, userVerified) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/users.csv' WITH DELIMITER ',';
-COPY products(productName, ratingOverall) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/products.csv' WITH DELIMITER ',';
-COPY reviews (userId, productId, isHelpful,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/reviews1.csv' WITH DELIMITER ',';
-COPY reviews (userId, productId, isHelpful,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/reviews2.csv' WITH DELIMITER ',';
-COPY reviews (userId, productId, isHelpful,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/reviews3.csv' WITH DELIMITER ',';
-COPY reviews (userId, productId, isHelpful,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/reviews4.csv' WITH DELIMITER ',';
-COPY reviews (userId, productId, isHelpful,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/reviews5.csv' WITH DELIMITER ',';
-COPY reviews (userId, productId, isHelpful,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/reviews6.csv' WITH DELIMITER ',';
-COPY reviews (userId, productId, isHelpful,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module/data/reviews7.csv' WITH DELIMITER ',';
+\COPY users(nickname, email, userVerified) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/users.csv' WITH DELIMITER ',';
+\COPY products(productName, ratingOverall) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/products.csv' WITH DELIMITER ',';
+\COPY reviews (userId, productId, isHelpful, isNotHelpful, createdAt,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/reviews1.csv' WITH DELIMITER ',';
+\COPY reviews (userId, productId, isHelpful, isNotHelpful, createdAt,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/reviews2.csv' WITH DELIMITER ',';
+\COPY reviews (userId, productId, isHelpful,isNotHelpful,createdAt,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/reviews3.csv' WITH DELIMITER ',';
+\COPY reviews (userId, productId, isHelpful,isNotHelpful,createdAt,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/reviews4.csv' WITH DELIMITER ',';
+\COPY reviews (userId, productId, isHelpful,isNotHelpful,createdAt,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/reviews5.csv' WITH DELIMITER ',';
+\COPY reviews (userId, productId, isHelpful,isNotHelpful,createdAt,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/reviews6.csv' WITH DELIMITER ',';
+\COPY reviews (userId, productId, isHelpful,isNotHelpful,createdAt,isRecommended, subject, description, ratingSize, ratingQuality, ratingWidth, ratingComfort, category) FROM '/Users/stevemarquez/hrsf127/SDC/reviews-module-steve/data/reviews7.csv' WITH DELIMITER ',';
 
 
 ALTER TABLE reviews ADD FOREIGN KEY (productId) REFERENCES products(productId);
