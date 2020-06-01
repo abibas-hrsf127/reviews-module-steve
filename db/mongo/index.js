@@ -10,12 +10,12 @@ mongoose.connect("mongodb://localhost/reviews", options);
 const Schema = mongoose.Schema;
 
 const productsSchema = new Schema({
-  productId: { type: Number, required: true },
+  productId: { type: Number, required: true, unique: true },
   productName: { type: String, required: true },
   ratingOverall: { type: Number, required: true},
   reviews: [
     {
-      reviewId: { type: Number, required: true, unique: true },
+      review_id: { type: Number, required: true },
       userVerified: { type: Boolean },
       nickname: { type: String },
       email: { type: String, required: true },
