@@ -8,6 +8,5 @@ router.put('/reviews', controller.reviews.put);
 router.put('/:productId/reviews', controller.reviews.put);
 router.delete('/reviews', controller.reviews.delete);
 
-
 module.exports = router;
 
