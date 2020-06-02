@@ -1,5 +1,7 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const redis = require('redis');
+
 
 
 const util = require('util');

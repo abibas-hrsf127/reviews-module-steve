@@ -98,7 +98,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [],
+      reviews: {},
       productcode: "1",
     };
     this.changeReviews = this.changeReviews.bind(this);

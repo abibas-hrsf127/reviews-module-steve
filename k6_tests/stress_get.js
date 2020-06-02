@@ -11,21 +11,21 @@ export let options = {
     { duration: "1m", target: 100 },
     { duration: "1m", target: 200 }, // normal load
     { duration: "1m", target: 200 }, // around the breaking point
-    { duration: "1m", target: 250 }, // around the breaking point
-    { duration: "1m", target: 250 }, // around the breaking point
+    { duration: "1m", target: 300 }, // around the breaking point
+    { duration: "1m", target: 300 }, // around the breaking point
     { duration: "1m", target: 0 },   // scale down. Recovery stage
   ],
 
     // vus: 300,
-    // duration: '2m'
+    // duration: '20s'
 
-  // thresholds: {
-    //   http_req_duration: ["p(99)<1500"], // 99% of requests must complete below 1.5s
-    // },
+  thresholds: {
+      http_req_duration: ["p(99)<1500"], // 99% of requests must complete below 1.5s
+    },
   };
   
   export default function () {
-    const url = "http://localhost:3003/api/models";
+    const url = `http://localhost:80/api/models`;
     const randomIntBetween = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1) + min);
     };
@@ -37,5 +37,5 @@ export let options = {
   if (res.status === 404) {
     myErrorCounter.add(1);
   }
-  sleep(Math.random() * 30);
+  sleep(1);
 }

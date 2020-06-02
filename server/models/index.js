@@ -71,7 +71,7 @@ module.exports = {
 
     // ---------------- MONGO---------------- \\
     get: function (id, callback) {
-      ProductsModel.findOne({productId: id}, cbQueryHandler(callback)).cache(id).limit(1);
+      ProductsModel.find({productId: id}, cbQueryHandler(callback)).cache(id).limit(1);
     },
     post: function(data, callback) {
       ProductsModel.insertMany([data.body], cbQueryHandler(callback));
