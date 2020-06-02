@@ -162,7 +162,7 @@ class ReviewList extends React.Component {
           </ToggleMenu>
         </div>
 
-        {this.props.reviews.map((review, i) => 
+        {this.props.reviews.reviews.map((review, i) => 
           <ReviewListEntry key={i} review={review}/>
         )}
         <FooterControls>

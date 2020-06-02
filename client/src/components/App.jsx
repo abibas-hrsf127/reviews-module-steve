@@ -3,9 +3,7 @@ import styled from "styled-components";
 import RatingTally from "./RatingTally.jsx";
 import ReviewList from "./ReviewList.jsx";
 import StatChart from "./StatChart.jsx";
-import fetch from "node-fetch";
 import axios from "axios";
-import sampledata from "../sampledata";
 import Footer from "./Footer.jsx";
 
 const Body = styled.div`
@@ -98,7 +96,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: {},
+      reviews: [],
       productcode: "1",
     };
     this.changeReviews = this.changeReviews.bind(this);
@@ -125,7 +123,7 @@ class App extends React.Component {
 
   render() {
     
-    let { reviews } = this.state;
+    const { reviews } = this.state;
     return (
       <>
         {reviews.length ? (
@@ -138,7 +136,7 @@ class App extends React.Component {
                   <StatChart />
                 </StatsSideDiv>
                 <ReviewDiv>
-                  <ReviewList reviews={reviews} />
+                  <ReviewList reviews={reviews[0]} />
                 </ReviewDiv>
               </ContentWrapper>
             </ReviewModule>

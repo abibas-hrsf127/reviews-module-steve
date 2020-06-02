@@ -61,29 +61,17 @@ class ReviewListEntry extends React.Component {
     <Title>{this.props.review.subject}</Title>
     <Text>{this.props.review.description}</Text>
     <>
-      {this.props.review.isrecommended ? (
+      {this.props.review.isRecommended ? (
         <Recommend>✓ I recommend this product</Recommend>
       ) : (
         <DontRecommend>x I do not recommend this product</DontRecommend>
       )}
     </>
     <User>{this.props.review.nickname}</User>
-    <div>Was this review helpful? Yes ({this.props.review.ishelpful}) No ({this.props.review.isnothelpful})</div>
+    <div>Was this review helpful? Yes ({this.props.review.isHelpful}) No ({this.props.review.isNotHelpful})</div>
   </CollectionItem>
     )
   }
 }
 
 export default ReviewListEntry;
-
-/*
-<Fragment>
-  <div>★★★★☆ April 30, 2020</div>
-  <div>Title: Awesome shoe!</div>
-  <div>Text: Comfortable, it has great style</div>
-  <div>✓I recommend this product</div>
-  <div>user: vanesa4</div>
-  <div>Was this review helpful? Yes (0) No (0)</div>
-  <div>---------------------------------------</div>
-</Fragment>
-*/
