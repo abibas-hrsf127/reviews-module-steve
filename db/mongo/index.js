@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 let options = {
   useNewUrlParser: true,
@@ -5,7 +6,7 @@ let options = {
   useCreateIndex: true,
 };
 
-mongoose.connect("mongodb://localhost/reviews", options);
+mongoose.connect(`${process.env.MONGO_HOST}/reviews`, options);
 
 const Schema = mongoose.Schema;
 

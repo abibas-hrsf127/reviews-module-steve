@@ -13,7 +13,6 @@ export let options = {
 var myErrorCounter = new Counter("my_error_counter");
 
 export default function() {
-  // let res = http.get(`http://localhost:3003/api/models/${Math.round(randomIntBetween(1,10000))}/reviews`);
   let res = http.get("https://test.loadimpact.com/404");
   if(res.status === 404) {
     myErrorCounter.add(1)

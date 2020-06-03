@@ -1,27 +1,23 @@
 require('newrelic');
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
 
-const middleware = require('./middleware.js');
+//const middleware = require('./middleware.js');
 const router = require('./routes.js');
 
 const app = express();
-const PORT = process.env.REVIEWSPORT || 3003;
+const PORT = process.env.SERVER_PORT || 3003;
 app.set('port', PORT);
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(middleware.httpRequestLogger);
+//app.use(middleware.httpRequestLogger);
 app.use(cors());
-
-// app.get('/api', (req, res) => {
-//   console.log('hello inside get route');
-//   res.send('response sent correctly!');
-// });
 
 app.use('/api/models', router);
 
