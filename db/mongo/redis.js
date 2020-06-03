@@ -2,8 +2,6 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const redis = require('redis');
 
-
-
 const util = require('util');
 
 const redis_port = process.env.REDIS_PORT;
@@ -20,7 +18,7 @@ client.on('connect', (err) => {
 client.hget = util.promisify(client.hget);
 
 
-mongoose.Query.prototype.cache = function(hkey, options = { expire:5 }) {
+mongoose.Query.prototype.cache = function(hkey, options = { expire: 5 }) {
   this.useCache = true;
   this.expire = options.expire
   this.hashKey = JSON.stringify(hkey || '');
