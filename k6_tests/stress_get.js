@@ -25,13 +25,13 @@ export let options = {
   };
   
   export default function () {
-    const url = `http://localhost:80/api/models`;
+    const url = `http://localhost:3000/api/models`;
     const randomIntBetween = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1) + min);
     };
     
   let res = http.get(
-    `${url}/${Math.round(randomIntBetween(1, 10000000))}/reviews`
+    `${url}/${Math.round(randomIntBetween(1, 7450000))}/reviews`
   );
   check(res, { "status was 200": (r) => r.status == 200 });
   if (res.status === 404) {

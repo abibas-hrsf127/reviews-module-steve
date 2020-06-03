@@ -108,7 +108,7 @@ class App extends React.Component {
 
   // HTTP Request Handlers
   fetchReviews() {
-    const productId = Math.floor(Math.random() * 10000000)
+    const productId = Math.floor(Math.random() * 7450000)
     let url = `/api/models/${productId}/reviews`;
     axios(url)
       .then((response) => response.data)
