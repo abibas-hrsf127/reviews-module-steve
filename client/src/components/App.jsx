@@ -103,13 +103,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchReviews();
+    //this.fetchReviews();
   }
 
   // HTTP Request Handlers
   fetchReviews() {
-    const productId = Math.floor(Math.random() * 7450000)
-    let url = `/api/models/${productId}/reviews`;
+    const randomIntBetween = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+
+    let url = `/api/models/${randomIntBetween(1, 7500000)}/reviews`;
     axios(url)
       .then((response) => response.data)
       .then((reviewsData) => this.changeReviews(reviewsData))
