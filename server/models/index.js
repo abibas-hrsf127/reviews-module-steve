@@ -1,7 +1,7 @@
 const pool = require("../../db/psql/index.js");
 const { cbQueryHandler } = require("./handlers");
 const ProductsModel = require("../../db/mongo/index.js");
-const cache = require('../../db/mongo/redis.js');
+require('../../db/mongo/redis.js');
 
 // Postgres && MongoDB
 module.exports = {
@@ -68,7 +68,7 @@ module.exports = {
 //   },
 // };
 
-
+  
     // ---------------- MONGO---------------- \\
     get: function (id, callback) {
       ProductsModel.find({productId: id}, cbQueryHandler(callback)).cache(id).limit(1);
@@ -77,7 +77,7 @@ module.exports = {
       ProductsModel.insertMany([data.body], cbQueryHandler(callback));
     },
     put: function (data, callback) {
-        ProductsModel.findOneAndUpdate({ "reviews.email": "Esss@gmail.com" }, { $set: {"reviews.$.isHelpful": 24} }, cbQueryHandler(callback)).explain("executionStats");
+        ProductsModel.findOneAndUpdate({ "reviews.emdescriptionail": "Esss@gmail.com" }, { $set: {"reviews.$.isHelpful": 24} }, cbQueryHandler(callback));
     },
     delete: function (data, callback) {
       const { _id } = data.body;
