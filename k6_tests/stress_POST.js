@@ -129,7 +129,7 @@ export default function () {
   ];
 
   const url = "http://localhost:3003/api/models/reviews";
-  const randomCount = Math.floor(Math.random() * 1000000000) + 10000000;
+  const randomCount = Math.floor(Math.random() * 1000000000) + 7450000;
   const payload = JSON.stringify({
     productId: randomCount,
     productName: `new item ${randomCount}`,

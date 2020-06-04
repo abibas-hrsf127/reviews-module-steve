@@ -84,9 +84,6 @@ position: relative;
     display: inline;
 `;
 
-
-
-
 const Footer = (props) => (
   <FooterContent>
     <Inner>

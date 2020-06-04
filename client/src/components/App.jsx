@@ -106,24 +106,25 @@ class App extends React.Component {
     this.fetchReviews();
   }
 
-  // HTTP Request Handlers
   fetchReviews() {
-    const productId = Math.floor(Math.random() * 10000000)
-    let url = `/api/models/${productId}/reviews`;
+    const randomIntBetween = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+
+    let url = `/api/models/${randomIntBetween(1, 7500000)}/reviews`;
     axios(url)
       .then((response) => response.data)
       .then((reviewsData) => this.changeReviews(reviewsData))
       .catch((err) => console.error(err));
   }
 
-  // Set State
   changeReviews(reviews) {
     this.setState({ reviews });
   }
 
   render() {
-    
     const { reviews } = this.state;
+
     return (
       <>
         {reviews.length ? (
@@ -132,8 +133,8 @@ class App extends React.Component {
               <Heading>Ratings & Reviews</Heading>
               <ContentWrapper width={window.innerWidth}>
                 <StatsSideDiv>
-                  <RatingTally />
-                  <StatChart />
+                  <RatingTally reviews={reviews[0]}/>
+                  <StatChart reviews={reviews[0]}/>
                 </StatsSideDiv>
                 <ReviewDiv>
                   <ReviewList reviews={reviews[0]} />

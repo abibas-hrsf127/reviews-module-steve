@@ -5,8 +5,8 @@ let options = {
   useUnifiedTopology: true,
   useCreateIndex: true,
 };
-
 mongoose.connect(`${process.env.MONGO_HOST}/reviews`, options);
+mongoose.connect('mongodb://13.57.81.157:27017/reviews', options);
 
 const Schema = mongoose.Schema;
 
