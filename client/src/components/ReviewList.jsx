@@ -163,7 +163,7 @@ class ReviewList extends React.Component {
         </div>
 
         {this.props.reviews.reviews.map((review, i) => 
-          <ReviewListEntry key={i} review={review}/>
+          <ReviewListEntry key={i} review={review} />
         )}
         <FooterControls>
           <LoadButton>

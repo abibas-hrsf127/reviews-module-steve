@@ -103,10 +103,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    //this.fetchReviews();
+    this.fetchReviews();
   }
 
-  // HTTP Request Handlers
   fetchReviews() {
     const randomIntBetween = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1) + min);
@@ -119,14 +118,13 @@ class App extends React.Component {
       .catch((err) => console.error(err));
   }
 
-  // Set State
   changeReviews(reviews) {
     this.setState({ reviews });
   }
 
   render() {
-    
     const { reviews } = this.state;
+
     return (
       <>
         {reviews.length ? (
@@ -135,8 +133,8 @@ class App extends React.Component {
               <Heading>Ratings & Reviews</Heading>
               <ContentWrapper width={window.innerWidth}>
                 <StatsSideDiv>
-                  <RatingTally />
-                  <StatChart />
+                  <RatingTally reviews={reviews[0]}/>
+                  <StatChart reviews={reviews[0]}/>
                 </StatsSideDiv>
                 <ReviewDiv>
                   <ReviewList reviews={reviews[0]} />
