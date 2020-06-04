@@ -111,7 +111,7 @@ class App extends React.Component {
       return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
-    let url = `/api/models/${randomIntBetween(1, 7500000)}/reviews`;
+    let url = `/api/models/${randomIntBetween(1, 7450000)}/reviews`;
     axios(url)
       .then((response) => response.data)
       .then((reviewsData) => this.changeReviews(reviewsData))
