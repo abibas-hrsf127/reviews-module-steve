@@ -1,7 +1,7 @@
 const pool = require("../../db/psql/index.js");
 const { cbQueryHandler } = require("./handlers");
 const ProductsModel = require("../../db/mongo/index.js");
-const cache = require('../../db/mongo/redis.js');
+// const cache = require('../../db/mongo/redis.js');
 
 // Postgres && MongoDB
 module.exports = {
@@ -71,7 +71,8 @@ module.exports = {
 
     // ---------------- MONGO---------------- \\
     get: function (id, callback) {
-      ProductsModel.find({productId: id}, cbQueryHandler(callback)).cache(id).limit(1);
+      //ProductsModel.find({productId: id}, cbQueryHandler(callback)).cache(id).limit(1);
+      ProductsModel.find({productId: id}, cbQueryHandler(callback)).limit(1);
     },
     post: function(data, callback) {
       ProductsModel.insertMany([data.body], cbQueryHandler(callback));
