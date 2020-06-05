@@ -1,7 +1,7 @@
 ## Server API
 
 ### Get reviews info
-  * GET `/api/products/:productId/reviews`
+  * GET `/api/models/:productId/reviews`
 
 **Path Parameters:**
   * `productId` product id
@@ -37,7 +37,7 @@
 ```
 
 ### Add review
-  * POST `/api/products/reviews`
+  * POST `/api/models/reviews`
 
 **Success Status Code:** `201`
 
@@ -64,7 +64,7 @@
 ```
 
 ### Update review info
-  * PATCH `/api/products/:productId/reviews/:reviewId`
+  * PATCH `/api/models/:productId/reviews/:reviewId`
 
 **Path Parameters:**
   * `productId` product id
@@ -96,7 +96,7 @@
 
 
 ### Delete review
-  * DELETE `/api/products/:productId/reviews/:reviewId`
+  * DELETE `/api/models/:productId/reviews/:reviewId`
 
 **Path Parameters:**
   * `reviewId` review id

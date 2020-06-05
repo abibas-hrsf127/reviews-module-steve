@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
+const compression = require('compression');
 
 //const middleware = require('./middleware.js');
 const router = require('./routes.js');
@@ -18,6 +19,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 //app.use(middleware.httpRequestLogger);
 app.use(cors());
+app.use(compression());
 
 app.use('/api/models', router);
 
